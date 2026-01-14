@@ -1,0 +1,59 @@
+spring:
+  application:
+    name: eraport
+  datasource:
+    writer:
+      jdbc-url: jdbc:postgresql://localhost:5432/eraport
+      username: postgres
+      password: P@ssw0rd
+      driver-class-name: org.postgresql.Driver
+    reader:
+      jdbc-url: jdbc:postgresql://localhost:5432/eraport
+      username: postgres
+      password: P@ssw0rd
+      driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    show-sql: true
+    open-in-view: false
+  jackson:
+    time-zone: Asia/Jakarta
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+app:
+  jwt:
+    secret: mySecretKeymySecretKeymySecretKeymySecretKeymySecretKeymySecretKeymySecretKey
+    expiration: 86400000 # 24 hours in milliseconds
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    enabled: true
+  show-actuator: true
+
+logging:
+  level:
+    com.eraport: DEBUG
+    org.springframework.web: DEBUG
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
