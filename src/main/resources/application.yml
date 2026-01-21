@@ -37,6 +37,14 @@ app:
     secret: mySecretKeymySecretKeymySecretKeymySecretKeymySecretKeymySecretKeymySecretKey
     expiration: 86400000 # 24 hours in milliseconds
 
+aws:
+  s3:
+    endpoint: https://object-418.kai.id
+    region: us-east-1
+    bucket-name: e-raport-dev-bucket
+    access-key: PSFBSAZRDEKDDKBMNAICLBHIOIGAFKKBFMBNBBICJN
+    secret-key: B92D11D1C51aa5068/f080DF010FA1740a602PDBD
+
 springdoc:
   api-docs:
     path: /v3/api-docs
